@@ -1,0 +1,19 @@
+.btn-group {
+    padding: 20px 30px;
+    width: 70%;
+    border-radius: 10px;
+    background-color: lightgrey;
+  }
+  .btn-group button {
+    background-color: grey;
+    padding: 10px 25px;
+    margin: 5px 0 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .parent {
+    display: flex;
+    justify-content: center;
+  }
