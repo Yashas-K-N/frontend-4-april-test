@@ -1,28 +1,32 @@
-// App.js
-import React, { useState } from "react";
-import MoviesList from "./MoviesList";
-import "./App.css";
-import GenreFilter from "./GenreFilter";
-import data from "./data";
+import { useState } from "react";
+import FilterMovies from "./FilterMovies";
+import { TopNave } from "./TopNave";
+import { movies } from "./data";
+import Genrefilter from "/genrefilter";
 
-const App = () => {
-  const [filteredGenre, setFilteredGenre] = useState(null);
 
-  const handleGenreChange = (genre) => {
-    setFilteredGenre(genre);
-  };
 
-  const filteredData = filteredGenre
-    ? data.filter((movie) => movie.genre === filteredGenre)
-    : data;
+
+function App({ movie }) {
+
+  const [GenreSelect, SetGenreSelection] = useState('ALL');
+
+  const haldelGenreSelect = (genre) => {
+   SetGenreSelection(genre)
+  }
+
 
   return (
     <>
-      <h1>Top 15 Movies of All Time</h1>
-      <GenreFilter onGenreChange={handleGenreChange} />
-      <MoviesList data={filteredData} />
+      
+      <div className="container">
+        < TopNave />
+        < Genrefilter movie={movies} GenreSelect={haldelGenreSelect} />
+        < FilterMovies movie={movies} GenreSelect={GenreSelect} />
+      </div>
     </>
+
   );
-};
+}
 
 export default App;
