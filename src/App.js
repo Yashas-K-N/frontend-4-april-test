@@ -1,9 +1,9 @@
 // App.js
 import React, { useState } from "react";
-import MoviesList from "./components/MoviesList";
+import MoviesList from "./MoviesList";
 import "./App.css";
-import GenreFilter from "./components/GenreFilter";
-import data from "./components/data";
+import GenreFilter from "./GenreFilter";
+import data from "./data";
 
 const App = () => {
   const [filteredGenre, setFilteredGenre] = useState(null);
